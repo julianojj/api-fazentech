@@ -5,7 +5,7 @@ module.exports = (req, res, next) => {
         const token = req.headers.authorization.split(' ')[1];
         const response = tokenServices.validateToken(token, process.env.JWT_KEY);
 
-        req.usuario = response;
+        req.idUser = response.idUser;
 
         next();
     } catch (err) {
