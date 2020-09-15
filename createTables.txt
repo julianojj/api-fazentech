@@ -1,0 +1,23 @@
+CREATE TABLE `user` (
+  `idUser` int NOT NULL AUTO_INCREMENT,
+  `nameUser` varchar(45) NOT NULL,
+  `emailUser` varchar(45) NOT NULL,
+  `passwordUser` varchar(60) NOT NULL,
+  `is_admin` tinyint(1) DEFAULT '0',
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idUser`),
+  UNIQUE KEY `emailUser` (`emailUser`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+CREATE TABLE `product` (
+  `idProduct` int NOT NULL AUTO_INCREMENT,
+  `nameProduct` varchar(45) NOT NULL,
+  `quantityProduct` int NOT NULL,
+  `priceProduct` float NOT NULL,
+  `imageProduct` varchar(100) NOT NULL,
+  `created` datetime DEFAULT CURRENT_TIMESTAMP,
+  `updated` datetime DEFAULT CURRENT_TIMESTAMP,
+  PRIMARY KEY (`idProduct`),
+  UNIQUE KEY `nameProduct` (`nameProduct`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
