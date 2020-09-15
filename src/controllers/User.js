@@ -32,9 +32,6 @@ router.post('/new', (req, res) => {
                         res.status(200).send({
                             token: tokenServices.generateToken({
                                 idUser: result.insertId,
-                                nameUser: result[0].nameUser,
-                                emailUser: result[0].emailUser,
-                                is_admin: result[0].is_admin
                             })
                         });
                     }
